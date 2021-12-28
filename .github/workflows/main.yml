@@ -22,12 +22,16 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-        uses: actions/checkout@main
+        uses: actions/checkout@v2
 
-      - name: Build and Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.7
+      - name: Install and Build
+        run: |
+        npm install
+        npm run build
+      
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
         env: 
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-          BRANCH: main
-          FOLDER: docs
-          BUILD_SCRIPT: npm install && npm run build
+          BRANCH: gh-pages
+          FOLDER: build
