@@ -1,20 +1,24 @@
+import { Routes, Route } from "react-router-dom";
+import Index from './pages/layout';
+import Home from './pages/home';
+import Front from './pages/front';
+import Three from './pages/three';
+import Me from './pages/me';
+
 import './App.less';
 import 'animate.css';
 
 const App = () => {
+  
   return (
-    <div className="index">
-      <div className='index-header'>👋, Hi</div>
-      <div className='index-body'>
-        <div className='index-row'>
-          <div className='index-body-card'>Personalized Homepage</div>
-          <div className='index-body-card' >Front-end related</div>
-        </div>
-        <div className='index-row'>
-          <div className='index-body-card'>Three JS demo</div>
-          <div className='index-body-card'>Contact me</div>
-        </div>
-      </div>
+    <div>
+         <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/front" element={<Front />} />
+          <Route path="/three" element={<Three />} />
+          <Route path="/me" element={<Me />} />
+        </Routes>
     </div>
   );
 }
