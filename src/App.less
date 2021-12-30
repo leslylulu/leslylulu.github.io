@@ -1,20 +1,31 @@
+@import '~antd/dist/antd.less';
+
 .index {
   display: flex;
   justify-content: center;
-  margin-top: 200px;
+  flex-direction: column;
+  height: calc(100vh);
+  background: #D4ECDD;
+}
+
+.index-header{
+  text-align: center;
+  color: #345B63;
+  font-size: 50px;
+  font-weight: bolder;
+  margin: 50px 0;
 }
 
 .index-body{
   display: flex;
   flex-direction: column;
-  width: 50%;
-  margin-top: 100px;
+  width: 100%;
 }
 
 .index-row{
   display: flex;
   flex-direction: row;
-  width: 100%;
+  margin: 0 20%;
 }
 
 .index-body-card{
@@ -25,8 +36,9 @@
   text-align: center;
   line-height: 140px;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 28px;
   color: white;
   font-weight: bolder;
+  background-color: #345B63;
 }
 

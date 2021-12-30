@@ -1,18 +1,19 @@
-import './App.css';
+import { Button } from 'antd';
+import './App.less';
 import 'animate.css';
 
-function App() {
-
+const App = () => {
   return (
     <div className="index">
+      <div className='index-header'>👋, Hi</div>
       <div className='index-body'>
         <div className='index-row'>
-          <div className='index-body-card' style={{background: '#D3E4CD'}}> A</div>
-          <div className='index-body-card' style={{background: '#99A799'}}> B</div>
+          <div className='index-body-card'>Personalized Homepage</div>
+          <div className='index-body-card' >Front-end related</div>
         </div>
         <div className='index-row'>
-          <div className='index-body-card' style={{background: '#F2DDC1'}}>C</div>
-          <div className='index-body-card' style={{background: '#E2C2B9'}}>D</div>
+          <div className='index-body-card'>Three JS demo</div>
+          <div className='index-body-card'>Contact me</div>
         </div>
       </div>
     </div>
