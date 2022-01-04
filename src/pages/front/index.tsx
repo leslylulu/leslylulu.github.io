@@ -1,11 +1,13 @@
-import Header from '../../comp/header/index';
+import Header from './header/index';
+import JSCatalog from './js/index';
 
 const Front = () => {
 
   return (
     <div>
       <Header/>
-      Front</div>
+      <JSCatalog/>
+    </div>
   );
 }
 
