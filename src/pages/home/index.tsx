@@ -1,5 +1,8 @@
-// import { Outlet } from "react-router-dom";
+import { Link, Routes, Route } from "react-router-dom";
 import MenuList from './list/index';
+import AnnualSummary from './annualsummary/index';
+import Test from './test/index';
+
 import './index.less';
 
 const Home = () => {
@@ -7,10 +10,12 @@ const Home = () => {
   return (
     <div className='home'>
       <div className='home-title'>
-        <span>👀</span>
-        <span style={{ marginLeft: 20 }}>2022</span>
-        {/* <Outlet /> */}
-        <MenuList/>
+  
+        <Routes>
+          <Route path="/" element={<MenuList />} />
+          <Route path="/anan" element={<AnnualSummary />} />
+          <Route path="/test" element={<Test />} />
+        </Routes>
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
 import { Link } from "react-router-dom";
 
-const MenuList = () => {
+const ArticleList = () => {
 
   const list = [
-    {id: 1, name: '2021年度总结', url: '/home/annualsummary' },
+    { id: 1, name: '2021年度总结', url: '/home/anan' },
+    { id: 1, name: 'test', url: '/home/test' },
   ]
 
   return (
     <div className='list'>
+      <span>👀</span>
+      <span style={{ marginLeft: 20 }}>2022</span>
       {
         list.map((item, index) => {
           return (
@@ -24,4 +27,4 @@ const MenuList = () => {
 
 }
 
-export default MenuList;
+export default ArticleList;
