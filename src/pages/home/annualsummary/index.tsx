@@ -11,11 +11,19 @@ const AnnualSummary = () => {
     navigate("/home");
   };
 
+  const backToIndex = () => {
+    navigate("/");
+  };
+
   return (
     <div className='page'>
       <div className='previous' onClick={backToPrevious}>
         <LeftCircleOutlined />
         <span>上一页</span>
+      </div>
+      <div className='previous' onClick={backToIndex}>
+        <LeftCircleOutlined />
+        <span>回到首页</span>
       </div>
       <div className='summary'>
         <p className='summary-title'>
