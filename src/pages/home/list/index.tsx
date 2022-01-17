@@ -1,27 +1,53 @@
 import { Link } from "react-router-dom";
+import './index.less';
 
 const ArticleList = () => {
 
-  const list = [
+  const list2021 = [
     { id: 1, name: '2021年度总结', url: '/home/anan' },
-    { id: 1, name: 'test', url: '/home/test' },
+    { id: 2, name: 'test', url: '/home/test' },
+  ];
+
+  const list2022 = [
+    { id: 1, name: '2022-01', url: '/home/anan' },
   ]
 
   return (
-    <div className='list'>
-      <span>👀</span>
-      <span style={{ marginLeft: 20 }}>2022</span>
-      {
-        list.map((item, index) => {
-          return (
-            <div key={index} className='home-list-item'>
-              <Link to={item.url}>
-                <span>{item.name}</span>
-              </Link>
-            </div>
-          )
-        })
-      }
+    <div style={{ height: '100vh' }}>
+      <div className="home-title">
+        <span>📷</span>
+        <span style={{ marginLeft: 20 }}>2022</span>
+      </div>
+      <div className="home-list">
+        {
+          list2022.map((item, index) => {
+            return (
+              <div key={index} className='home-list-item'>
+                <Link to={item.url}>
+                  <span>{item.name}</span>
+                </Link>
+              </div>
+            )
+          })
+        }
+      </div>
+      <div className="home-title">
+        <span>👀</span>
+        <span style={{ marginLeft: 20 }}>2021</span>
+      </div>
+      <div className="home-list">
+        {
+          list2021.map((item, index) => {
+            return (
+              <div key={index} className='home-list-item'>
+                <Link to={item.url}>
+                  <span>{item.name}</span>
+                </Link>
+              </div>
+            )
+          })
+        }
+      </div>
     </div>
   )
 
