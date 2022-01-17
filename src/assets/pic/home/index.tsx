@@ -1,13 +1,9 @@
 import sister  from './sisters.jpg';
 import empty  from './empty.png';
-// @ts-ignore
-import pp1 from './pp1.JPG';
-// @ts-ignore
-import move from './move.JPEG';
-// @ts-ignore
-import camera from './camera.JPG';
-// @ts-ignore
-import music from './music.JPG';
+import pp1 from './pp1.jpg';
+import move from './move.jpeg';
+import camera from './camera.jpg';
+import music from './music.jpg';
 
 export { 
   sister,
