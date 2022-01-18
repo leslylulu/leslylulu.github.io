@@ -1,18 +1,13 @@
 import { Row, Col } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { sister, empty, pp1, move, camera, music } from "../../../assets/pic/home/index";
+// import { sister, empty, pp1, move, camera, music } from "../../../assets/pic/home/index";
+import { sister, empty } from "../../../assets/pic/home/index";
+
 import "./index.less";
 
 const AnnualSummary = () => {
   let navigate = useNavigate();
-
-  const contentStyle: any = {
-    height: "100%",
-    color: "#fff",
-    lineHeight: "100%",
-    textAlign: "center",
-  };
 
   const backToPrevious = () => {
     navigate("/home");
@@ -74,7 +69,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={pp1} alt="胖胖" />
+                <img src={empty} alt="胖胖" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -96,7 +91,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={move} alt="搬家" />
+                <img src={empty} alt="搬家" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -168,7 +163,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={camera} alt="camera" />
+                <img src={empty} alt="camera" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -185,7 +180,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={music} alt="music" />
+                <img src={empty} alt="music" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -196,7 +191,7 @@ const AnnualSummary = () => {
                 音乐会
               </div>
               <div>第一次和老周一起听音乐会，听得是他喜欢的歌手</div>
-              <div>穿情侣装，去好吃的餐厅，大概是所有情侣都会做的事情</div>
+              <div>穿情侣装，去好吃的餐厅，做什么事情都会陪着我</div>
             </Col>
           </Row>
           <Row gutter={10} style={{ paddingTop: 20 }}>
@@ -221,8 +216,141 @@ const AnnualSummary = () => {
               <div>下次还是精心选礼物吧</div>
             </Col>
           </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-07-04
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                东莞出差
+              </div>
+              <div>其实只是换了一个地方出差，需要重买生活用品，买的都是必需品</div>
+              <div>对于一些 提升幸福感没用的东西就是舍不得买，因为买了也带不走</div>
+              <div>本以为出差能瘦一些，但是只是我以为，饿了还是会想方设法去觅食</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-07-04
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                东莞出差
+              </div>
+              <div>其实只是换了一个地方出差，需要重买生活用品，买的都是必需品</div>
+              <div>对于一些 提升幸福感没用的东西就是舍不得买，因为买了也带不走</div>
+              <div>本以为出差能瘦一些，但是只是我以为，饿了还是会想方设法去觅食</div>
+              <div>我开始自己烫头，眼会手不会，烫完之后，完全就是大后悔，啥也不是</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-07-23
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                我回家了
+              </div>
+              <div>我回的是安徽淮北，是我的家乡，是我从小长大的地方</div>
+              <div>在家的这几天就和我爸妈还有我姐呆在一起，上班之后，只要和家人呆在一起就是很开心的</div>
+              <div>在家就是研究吃啥，玩啥，穿啥，根本不会有工作的烦恼困扰我</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-09-03
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                杭州
+              </div>
+              <div>又一次回杭州了，项目接近尾声，所以的大部分时间是在杭州度过的</div>
+              <div>我的相册里多了儿子们和老周的照片</div>
+              <div>9月在我生日的时候收到了老周送的iwatch，我很开心，但是对于合上圆环我依然是没有动力🤦‍♀️，对于我来说只是一个装饰品，和纯纯的看时间而已</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-09-03
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                杭州
+              </div>
+              <div>又一次回杭州了，项目接近尾声，所以的大部分时间是在杭州度过的</div>
+              <div>我的相册里多了儿子们和老周的照片</div>
+              <div>9月在我生日的时候收到了老周送的iwatch，我很开心，但是对于合上圆环我依然是没有动力🤦‍♀️，对于我来说只是一个装饰品，和纯纯的看时间而已</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-10-04
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                大学室友结婚了
+              </div>
+              <div>这是我们寝室第一个结婚的</div>
+              <div>第一次见老芮，一眼就看出老芮是个逗比</div>
+              <div>这是我第一次当伴娘，我是寝室最矮的，我买了双很难穿的恨天高，五分钟就走不动路了</div>
+              <div>后悔买了这双鞋，后面也二手出不去</div>
+              <div>但是结婚的这一天，前前后后真的还挺累，早上6点到晚上10点多，很难撑住了，一直对外social，最后就是累到不想说话</div>
+            </Col>
+          </Row>
+          <Row gutter={10} style={{ paddingTop: 20 }}>
+            <Col span={8}>
+              <div className="summary-pic">
+                <img src={empty} alt="胖胖" />
+              </div>
+            </Col>
+            <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
+              <div style={{ fontWeight: "bold", fontFamily: "math" }}>
+                2021-10-22
+              </div>
+              <div style={{ fontWeight: "bold", fontFamily: "SimHei" }}>
+                老周公司篮球赛
+              </div>
+              <div>为了这次打篮球终于穿上了心心念念的乔丹</div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </Col>
+          </Row>
         </div>
       </div>
+      <div className="time"></div>
     </div>
   );
 };
