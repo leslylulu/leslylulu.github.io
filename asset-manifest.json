@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.dc06e7b9.css",
-    "main.js": "/static/js/main.d0df17b7.js",
+    "main.css": "/static/css/main.b8095e6f.css",
+    "main.js": "/static/js/main.7a30aaf4.js",
     "static/js/787.b1379035.chunk.js": "/static/js/787.b1379035.chunk.js",
     "static/media/setofont.ttf": "/static/media/setofont.efa40079a2e37a1571fa.ttf",
     "static/media/sisters.jpg": "/static/media/sisters.57268756ec41e3e3189b.jpg",
@@ -12,12 +12,12 @@
     "static/media/iconfont.woff?t=1640827534219": "/static/media/iconfont.98c344b932fb62096891.woff",
     "static/media/iconfont.woff2?t=1640827534219": "/static/media/iconfont.d86df9d56bd1be74d2b5.woff2",
     "index.html": "/index.html",
-    "main.dc06e7b9.css.map": "/static/css/main.dc06e7b9.css.map",
-    "main.d0df17b7.js.map": "/static/js/main.d0df17b7.js.map",
+    "main.b8095e6f.css.map": "/static/css/main.b8095e6f.css.map",
+    "main.7a30aaf4.js.map": "/static/js/main.7a30aaf4.js.map",
     "787.b1379035.chunk.js.map": "/static/js/787.b1379035.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc06e7b9.css",
-    "static/js/main.d0df17b7.js"
+    "static/css/main.b8095e6f.css",
+    "static/js/main.7a30aaf4.js"
   ]
 }
