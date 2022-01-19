@@ -6,7 +6,7 @@ const ThreeList = () => {
   const listdemo = [
     { id: 1, name: '场景', url: '/three/demo' },
     { id: 2, name: '线', url: '/three/line' },
-    { id: 3, name: '文字', url: '/three/text' },
+    { id: 3, name: '图元', url: '/three/geometry' },
     { id: 4, name: '线', url: '/three/line' },
   ];
 
