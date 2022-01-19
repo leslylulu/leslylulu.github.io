@@ -1,0 +1,37 @@
+.three {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #F0F5F9;
+
+  &-title {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    font-size: 60px;
+    font-family: 'DS-Digital-Bold';
+    justify-content: flex-end;
+    padding-right: 50px;
+  }
+
+  &-list {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+
+    &-content {
+      width: 100%;
+      background: rgba(87, 97, 107, 0.24);
+      margin-right: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      &-item {
+        font-family: SimHei;
+        span:hover{
+          color: #6300cf;
+        }
+      }
+    }
+  }
+}
