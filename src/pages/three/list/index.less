@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: row;
   height: 100vh;
-  background-color: #F0F5F9;
+  background-color: #000;
+  color: #fff;
 
   &-title {
     width: 20%;
@@ -39,7 +40,7 @@
   &-list {
     width: 80%;
     display: flex;
-    background-color: #fff;
+    background-color: #000;
     padding-left: 20px;
 
     &-content {
@@ -53,10 +54,11 @@
         font-family: SimHei;
         width: 23%;
         min-width: 200px;
-        background-color: #F0F5F9;
+        background-color: #adb4b9;
         border-radius: 8px;
         margin: 20px 20px 0 0;
         padding-bottom: 10px;
+        border: 2px solid #adb4b9;
 
         span:hover {
           color: #6300cf;
@@ -76,7 +78,8 @@
       }
 
       &-item:hover {
-        box-shadow: 4px 4px 4px 1px rgba(178, 178, 178, 0.4), -4px -4px 4px 1px rgba(178, 178, 178, 0.4);
+        background-color: #fff;
+        border: 2px solid #fff;
       }
     }
   }
