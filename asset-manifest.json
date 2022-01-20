@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/static/css/main.cac36d29.css",
-    "main.js": "/static/js/main.e1cbe573.js",
+    "main.css": "/static/css/main.c7d410d7.css",
+    "main.js": "/static/js/main.e3bb4c0e.js",
     "static/js/787.b1379035.chunk.js": "/static/js/787.b1379035.chunk.js",
     "static/media/setofont.ttf": "/static/media/setofont.efa40079a2e37a1571fa.ttf",
+    "static/media/demo.gif": "/static/media/demo.e76a57a34db4f49b46df.gif",
     "static/media/sisters.jpg": "/static/media/sisters.57268756ec41e3e3189b.jpg",
     "static/media/blackItalic.ttf": "/static/media/blackItalic.2b227faef26fd2d7061a.ttf",
+    "static/media/box.gif": "/static/media/box.2563e1aa8d7455ea6ac2.gif",
     "static/media/empty.png": "/static/media/empty.01fac2d67ae237625068.png",
     "static/media/babyground.ttf": "/static/media/babyground.6279da3eb81e9b56cc82.ttf",
     "static/media/iconfont.ttf?t=1640827534219": "/static/media/iconfont.92e20059b0ec857bef1c.ttf",
     "static/media/iconfont.woff?t=1640827534219": "/static/media/iconfont.98c344b932fb62096891.woff",
     "static/media/iconfont.woff2?t=1640827534219": "/static/media/iconfont.d86df9d56bd1be74d2b5.woff2",
     "index.html": "/index.html",
-    "main.cac36d29.css.map": "/static/css/main.cac36d29.css.map",
-    "main.e1cbe573.js.map": "/static/js/main.e1cbe573.js.map",
+    "main.c7d410d7.css.map": "/static/css/main.c7d410d7.css.map",
+    "main.e3bb4c0e.js.map": "/static/js/main.e3bb4c0e.js.map",
     "787.b1379035.chunk.js.map": "/static/js/787.b1379035.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cac36d29.css",
-    "static/js/main.e1cbe573.js"
+    "static/css/main.c7d410d7.css",
+    "static/js/main.e3bb4c0e.js"
   ]
 }
