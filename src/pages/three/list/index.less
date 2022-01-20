@@ -5,32 +5,78 @@
   background-color: #F0F5F9;
 
   &-title {
-    width: 30%;
+    width: 20%;
     display: flex;
-    align-items: center;
     font-size: 60px;
     font-family: 'DS-Digital-Bold';
-    justify-content: flex-end;
-    padding-right: 50px;
+    flex-direction: column;
+    margin: 0 20px;
+
+    &-back {
+      font-size: 20px;
+      margin-top: 20px;
+
+      span {
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      span:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-info {
+      font-size: 16px;
+      font-family: SimHei;
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
   }
 
   &-list {
-    width: 70%;
+    width: 80%;
     display: flex;
-    align-items: center;
-    margin-right: 20px;
+    background-color: #fff;
+    padding-left: 20px;
 
     &-content {
       width: 100%;
-      background: rgba(87, 97, 107, 0.24);
       margin-right: 20px;
-      padding: 20px;
-      border-radius: 8px;
+      flex-wrap: wrap;
+      display: flex;
+      align-content: flex-start;
+
       &-item {
         font-family: SimHei;
-        span:hover{
+        width: 23%;
+        min-width: 200px;
+        background-color: #F0F5F9;
+        border-radius: 8px;
+        margin: 20px 20px 0 0;
+        padding-bottom: 10px;
+
+        span:hover {
           color: #6300cf;
         }
+
+        img {
+          width: 100%;
+          border-radius: 8px 8px 0 0;
+        }
+
+        &-title {
+          text-align: center;
+          color: #1E2022;
+          font-size: 18px;
+          margin-top: 10px;
+        }
+      }
+
+      &-item:hover {
+        box-shadow: 4px 4px 4px 1px rgba(178, 178, 178, 0.4), -4px -4px 4px 1px rgba(178, 178, 178, 0.4);
       }
     }
   }

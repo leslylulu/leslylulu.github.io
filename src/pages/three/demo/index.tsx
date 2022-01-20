@@ -29,7 +29,7 @@ const ThreeScene = () => {
      * 第三个参数：near = 0.1 平面
      * 第四个参数：far = 5 远平面
      */
-    const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     const canvas = window.document.getElementById('cube');
     const renderer = new WebGLRenderer({ canvas });
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -59,7 +59,7 @@ const ThreeScene = () => {
     // 将网格添加到场景中
     scene.add(cubes);
     // 摄像机默认指向Z轴负方向
-    camera.position.z = 6;
+    camera.position.z = 10;
 
     const color = 0xFFFFFF;
     const intensity = 1;
