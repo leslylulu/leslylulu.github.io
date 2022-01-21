@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import {
   Scene,
+  Color,
   PerspectiveCamera,
   WebGLRenderer,
   BoxGeometry,
@@ -10,244 +12,219 @@ import {
   ConeGeometry,
   CylinderGeometry,
   DodecahedronGeometry,
-  Shape,
-  ExtrudeGeometry,
+  DoubleSide,
+  // Shape,
+  // ExtrudeGeometry,
   IcosahedronGeometry,
   Vector2,
   LatheGeometry,
+  OctahedronGeometry, // 八面体 参数： radius, detail
+  PolyhedronGeometry, // 将一些环绕着中心点的三角形投影到球体上
+  SphereGeometry, // 球体 三个参数：radius，widthSegments，heightSegments
+  TetrahedronGeometry, // 四面体 参数：radius 
+  TorusGeometry, // 甜甜圈 参数： radius, tubeRadius, radialSegments, tubularSegments
+  TorusKnotGeometry, // 环形节 参数： radius, tubeRadius， tubularSegments， radialSegments， p, q
+  // TubeGeometry, // 圆环沿着路径 参数：path, tubularSegments, radius, radialSegments, closed
+  // EdgesGeometry, // 一个工具对象，将一个几何体作为输入，生成面夹角大于某个阈值的那条边。
+  // FontLoader,
+  // TextGeometry, // 3D 文字 参数： font, size, height, curveSegments, bevelEnabled, bevelThickness, bevelSize, bevelSegments
+  // PlaneGeometry, 二维平面 参数: width, height 
+  // RingGeometry, // 中间有洞的2D圆盘 参数： innerRadius, outerRadius, thetaSegments(分成几等分的圆)
   Mesh
 } from 'three'; // 裸导入
 import './index.less';
 
 const Geometry = () => {
 
+  const objects: any = [];
+  const createMaterial = () => {
+    const material = new MeshPhongMaterial({
+      side: DoubleSide, // side: THREE.DoubleSide 传给材质。这告诉 Three.js 绘制组成形状的三角形的两个
+    });
+    const hue = Math.random();
+    const saturation = 1;
+    const luminance = .5;
+    material.color.setHSL(hue, saturation, luminance);
+    return material;
+  }
+
+  useEffect(() => {
+    initScene();
+  }, []);
+
   const initScene = () => {
     const scene = new Scene();
-    const camera = new PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 100);
+    scene.background = new Color(0xFFE2E2); // 修改背景颜色
+    const fov = 40;
+    const aspect = 2;  // the canvas default
+    const near = 0.1;
+    const far = 1000;
+    const camera = new PerspectiveCamera(fov, aspect, near, far);
     const canvas = window.document.getElementById('geometry');
     const renderer = new WebGLRenderer({ canvas });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
 
+    // 摄像机默认指向Z轴负方向
+    camera.position.z = 120;
+
+    const addObject = (x: any, y: any, z: any, obj: any) => {
+      obj.position.x = x;
+      obj.position.y = y;
+      obj.position.z = z;
+      scene.add(obj);
+      objects.push(obj);
+    }
+
+    const addSolidGeometry = (x: any, y: any, z: any, geometry: any) => {
+      const mesh = new Mesh(geometry, createMaterial());
+      addObject(x, y, z, mesh);
+    }
+
+    // 平行光
+    const color = 0xFFFFFF;
+    const intensity = 1;
+    const light = new DirectionalLight(color, intensity);
+    light.position.set(-1, 2, 4);
+    scene.add(light);
+
     // 长方体
-    const geometry = new BoxGeometry(1, 1, 2, 1, 1, 1);
-    const material = new MeshPhongMaterial({ color: 0xffc0cb });
-    const cube = new Mesh(geometry, material);
-    cube.position.y = 4;
-    cube.position.x = -4;
-    scene.add(cube);
+    const width = 4;
+    const height = 4;
+    const depth = 8;
+    addSolidGeometry(-40, 30, -1, new BoxGeometry(width, height, depth));
 
     //  圆形
-    const radius = 1;
+    const radius = 4;
     const segments = 12;
-    const circleGeometry = new CircleGeometry(radius, segments);
-    const circlMaterial = new MeshPhongMaterial({ color: 0x8785A2 });
-    const circlePie = new Mesh(circleGeometry, circlMaterial);
-    circlePie.position.y = 4;
-    circlePie.position.x = 0;
-    scene.add(circlePie);
+    addSolidGeometry(-30, 30, -1, new CircleGeometry(radius, segments));
+
 
     // 缺口圆形
     const thetaStart = Math.PI * 0.25;  // ui: thetaStart
     const thetaLength = Math.PI * 1.5;  // ui: thetaLength
-    const circleGeometry2 = new CircleGeometry(radius, segments, thetaStart, thetaLength);
-    const circlMaterial2 = new MeshPhongMaterial({ color: 0xF6F6F6 });
-    const circlePie2 = new Mesh(circleGeometry2, circlMaterial2);
-    circlePie2.position.y = 4;
-    circlePie2.position.x = 4;
-    scene.add(circlePie2);
+    addSolidGeometry(-20, 30, -1, new CircleGeometry(radius, segments, thetaStart, thetaLength));
 
     // 锥形
-    const height = 1;
+    // const height = 1;
     const radialSegments = 32;
-    const geometry2 = new ConeGeometry(radius, height, radialSegments);
-    const circlMaterial3 = new MeshPhongMaterial({ color: 0x9DAD7F });
-    const coneGeometry = new Mesh(geometry2, circlMaterial3);
-    coneGeometry.position.y = 0;
-    coneGeometry.position.x = -4;
-    scene.add(coneGeometry);
+    addSolidGeometry(-10, 30, -1, new ConeGeometry(radius, segments, radialSegments));
 
     // 锥形2
-    const heightSegments = 2; 
-    const openEnded = true; 
-    const geometry3 = new ConeGeometry(
-      radius, height,
-      radialSegments, heightSegments,
-      openEnded,
-      thetaStart, thetaLength);
-    const circlMaterial4 = new MeshPhongMaterial({ color: 0xD9F9F4 });
-    const coneGeometry1 = new Mesh(geometry3, circlMaterial4);
-    coneGeometry1.position.y = 0;
-    coneGeometry1.position.x = 0;
-    scene.add(coneGeometry1);
+    const heightSegments = 2;
+    const openEnded = true;
+    addSolidGeometry(0, 30, -1, new ConeGeometry(radius, height, radialSegments, heightSegments, openEnded, thetaStart, thetaLength));
+   
 
     // 圆柱
     const radiusTop = 1;  // ui: radiusTop
-    const radiusBottom = 1;  // ui: radiusBottom
-    const radialSegments1 = 16;
-    const geometry4 = new CylinderGeometry(
-        radiusTop, radiusBottom, height, radialSegments1);
-    const circlMaterial5 = new MeshPhongMaterial({ color: 0xFF9C91 });
-    const cylinderGeometry1 = new Mesh(geometry4, circlMaterial5);
-    cylinderGeometry1.position.y = 0;
-    cylinderGeometry1.position.x = 4;
-    scene.add(cylinderGeometry1);
+    const radiusBottom = 3;  // ui: radiusBottom
+    addSolidGeometry(10, 30, -1, new CylinderGeometry(radiusTop, radiusBottom, 6, radialSegments));
 
     // 缺口圆柱
-    const geometry5 = new CylinderGeometry(
-        radiusTop, radiusBottom, height,
-        radialSegments, heightSegments,
-        openEnded,
-        thetaStart, thetaLength);
-    const circlMaterial6 = new MeshPhongMaterial({ color: 0xD4ECDD });
-    const cylinderGeometry2 = new Mesh(geometry5, circlMaterial6);
-    cylinderGeometry2.position.y = -4;
-    cylinderGeometry2.position.x = -4;
-    scene.add(cylinderGeometry2);
-
+    addSolidGeometry(20, 30, -1, new CylinderGeometry(
+      radiusTop, radiusBottom, 6, radialSegments, heightSegments, openEnded, thetaStart, thetaLength));
+  
     // 十二面体
-    const geometry6 = new DodecahedronGeometry(radius);
-    const material7 = new MeshPhongMaterial({ color: 0xFF7878 });
-    const dodecahedronGeometry = new Mesh(geometry6, material7);
-    dodecahedronGeometry.position.y = -4;
-    dodecahedronGeometry.position.x = 0;
-    scene.add(dodecahedronGeometry);
+    addSolidGeometry(30, 30, -1, new DodecahedronGeometry(radius));
 
     const detail = 2;  // ui: detail
-    const geometry8 = new DodecahedronGeometry(radius, detail);
-    const material8 = new MeshPhongMaterial({ color: 0x8843F2 });
-    const dodecahedronGeometry2 = new Mesh(geometry8, material8);
-    dodecahedronGeometry2.position.y = -4;
-    dodecahedronGeometry2.position.x = 4;
-    scene.add(dodecahedronGeometry2);
+    addSolidGeometry(40, 30, -1, new DodecahedronGeometry(radius, 2));
 
     // 二十面体
-    const geometry10 = new IcosahedronGeometry(radius);
-    const material10 = new MeshPhongMaterial({ color: 0xBAFFB4 });
-    const icosahedronGeometry = new Mesh(geometry10, material10);
-    icosahedronGeometry.position.y = -8;
-    icosahedronGeometry.position.x = -4;
-    scene.add(icosahedronGeometry);
+    addSolidGeometry(-40, 20, -1, new IcosahedronGeometry(4));
 
-    const geometry11 = new IcosahedronGeometry(radius, detail);
-    const material11 = new MeshPhongMaterial({ color: 0x84DFFF });
-    const icosahedronGeometry2 = new Mesh(geometry11, material11);
-    icosahedronGeometry2.position.y = -8;
-    icosahedronGeometry2.position.x = 0;
-    scene.add(icosahedronGeometry2);
+    addSolidGeometry(-30, 20, -1, new IcosahedronGeometry(4, 2));
 
+    
+    // 酒瓶、玻璃杯
     const points = [];
     for (let i = 0; i < 6; ++i) {
-      points.push(new Vector2(Math.sin(i * 0.1) * 0.5 + 1, (i - 5) * .8));
+      points.push(new Vector2(Math.sin(i * 0.1) * 0.5 + 1, (i - 5) * 1));
     }
-    const geometry12 = new LatheGeometry(points);
-    const material12 = new MeshPhongMaterial({ color: 0x516BEB });
-    const latheGeometry1 = new Mesh(geometry12, material12);
-    latheGeometry1.position.y = -8;
-    latheGeometry1.position.x = 4;
-    scene.add(latheGeometry1);
+    addSolidGeometry(-20, 20, -1, new LatheGeometry(points));
 
-    const shape = new Shape();
-    const x = -2.5;
-    const y = -5;
-    shape.moveTo(x + 2.5, y + 2.5);
-    shape.bezierCurveTo(x + 2.5, y + 2.5, x + 2, y, x, y);
-    shape.bezierCurveTo(x - 3, y, x - 3, y + 3.5, x - 3, y + 3.5);
-    shape.bezierCurveTo(x - 3, y + 5.5, x - 1.5, y + 7.7, x + 2.5, y + 9.5);
-    shape.bezierCurveTo(x + 6, y + 7.7, x + 8, y + 4.5, x + 8, y + 3.5);
-    shape.bezierCurveTo(x + 8, y + 3.5, x + 8, y, x + 5, y);
-    shape.bezierCurveTo(x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5);
-    const extrudeSettings = {
-      steps: 2,  // ui: steps
-      depth: 2,  // ui: depth
-      bevelEnabled: true,  // ui: bevelEnabled
-      bevelThickness: 1,  // ui: bevelThickness
-      bevelSize: 1,  // ui: bevelSize
-      bevelSegments: 2,  // ui: bevelSegments
-    };
-    const geometry9 = new ExtrudeGeometry(shape, extrudeSettings);
-    const material9 = new MeshPhongMaterial({ color: 0x8843F2 });
-    const heart = new Mesh(geometry9, material9);
-    heart.position.y = -8;
-    heart.position.x = -4;
-    // scene.add(heart);
+    // 八面体
+    addSolidGeometry(-10, 20, -1, new OctahedronGeometry(radius));
 
-    // 摄像机默认指向Z轴负方向
-    camera.position.z = 20;
-    const color = 0xFFFFFF;
-    const intensity = 1;
-    // 平行光
-    const light = new DirectionalLight(color, intensity);
-    light.position.set(-1, 2, 4);
-    scene.add(light);
-    // requestAnimationFrame 需要显示的动画，传入一个函数作为回调
-    const animate = (time: any) => {
-      time *= 0.0005;
-      cube.rotation.x = time;
-      cube.rotation.z = time;
-      cube.rotation.y = time;
 
-      circlePie.rotation.x = time;
-      circlePie.rotation.z = time;
-      circlePie.rotation.y = time;
+    const verticesOfCube = [
+      -1, -1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1,
+      -1, -1, 1, 1, -1, 1, 1, 1, 1, -1, 1, 1,
+    ];
+    const indicesOfFaces = [
+      2, 1, 0, 0, 3, 2,
+      0, 4, 7, 7, 3, 0,
+      0, 1, 5, 5, 4, 0,
+      1, 2, 6, 6, 5, 1,
+      2, 3, 7, 7, 6, 2,
+      4, 5, 6, 6, 7, 4,
+    ];
+    addSolidGeometry(0, 20, -1, new PolyhedronGeometry(verticesOfCube, indicesOfFaces, radius, detail));
 
-      circlePie2.rotation.x = time - 0.001;
-      circlePie2.rotation.y = time - 0.001;
-      circlePie2.rotation.z = time - 0.001;
+    // 球体
+    addSolidGeometry(10, 20, -1, new SphereGeometry(radius, 128, 1));
 
-      coneGeometry.rotation.x = time;
-      coneGeometry.rotation.z = time;
-      coneGeometry.rotation.y = time;
+    // 四面体
+    addSolidGeometry(20, 20, -1, new TetrahedronGeometry(4));
 
-      coneGeometry1.rotation.x = time;
-      coneGeometry1.rotation.z = time;
-      coneGeometry1.rotation.y = time;
+    // 圆环体（甜甜圈）
+    const TorRadius = 4;
+    const tubeRadius = 1;  // ui: tubeRadius
+    const torradialSegments = 6;  // ui: radialSegments
+    const tubularSegments = 48;  // ui: tubularSegments
+    addSolidGeometry(30, 20, -1, new TorusGeometry(TorRadius, tubeRadius, torradialSegments, tubularSegments));
 
-      cylinderGeometry1.rotation.x = time;
-      cylinderGeometry1.rotation.z = time;
-      cylinderGeometry1.rotation.y = time;
-      
-      cylinderGeometry2.rotation.x = time;
-      cylinderGeometry2.rotation.z = time;
-      cylinderGeometry2.rotation.y = time;
+    // 环形节
+    const torradius = 3;  // ui: radius
+    const tubeRadius2 = 1;  // ui: tubeRadius
+    const tubularSegments2 = 64;  // ui: tubularSegments
+    const radialSegments3 = 8;  // ui: radialSegments
+    const p = 2;  // ui: p
+    const q = 3;  // ui: q
+    addSolidGeometry(42, 20, -1, new TorusKnotGeometry(
+      torradius, tubeRadius2, tubularSegments2, radialSegments3, p, q
+    ));
 
-      dodecahedronGeometry.rotation.x = time;
-      dodecahedronGeometry.rotation.z = time;
-      dodecahedronGeometry.rotation.y = time;
+    const resizeRendererToDisplaySize = (renderer: any) => {
+      const canvas = renderer.domElement;
+      const width = canvas.clientWidth;
+      const height = canvas.clientHeight;
+      const needResize = canvas.width !== width || canvas.height !== height;
+      if (needResize) {
+        renderer.setSize(width, height, false);
+      }
+      return needResize;
+    }
 
-      dodecahedronGeometry2.rotation.x = time;
-      dodecahedronGeometry2.rotation.z = time;
-      dodecahedronGeometry2.rotation.y = time;
+    const render = (time: any) => {
+      time *= 0.001;
 
-      heart.rotation.x = time;
-      heart.rotation.z = time;
-      heart.rotation.y = time;
+      if (resizeRendererToDisplaySize(renderer)) {
+        const canvas = renderer.domElement;
+        camera.aspect = canvas.clientWidth / canvas.clientHeight;
+        camera.updateProjectionMatrix();
+      }
 
-      icosahedronGeometry.rotation.x = time;
-      icosahedronGeometry.rotation.z = time;
-      icosahedronGeometry.rotation.y = time;
-
-      icosahedronGeometry2.rotation.x = time;
-      icosahedronGeometry2.rotation.z = time;
-      icosahedronGeometry2.rotation.y = time;
-
-      latheGeometry1.rotation.x = time;
-      latheGeometry1.rotation.z = time;
-      latheGeometry1.rotation.y = time;
+      objects.forEach((obj: any, ndx: any) => {
+        const speed = .1 + ndx * .05;
+        const rot = time * speed;
+        obj.rotation.x = rot + 1;
+        obj.rotation.y = rot;
+        obj.rotation.z = rot;
+      });
 
       renderer.render(scene, camera);
-      requestAnimationFrame(animate);
-    };
-    animate(0.1);
+      requestAnimationFrame(render);
+    }
+    requestAnimationFrame(render);
+
   }
 
-  useEffect(() => {
-    initScene()
-  }, [])
+
 
   return (
     <div>
-      <div className='title'>this is geometry demo</div>
       <div>
         <canvas id="geometry" width="1800" height="700"></canvas>
       </div>
