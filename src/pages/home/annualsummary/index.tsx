@@ -1,7 +1,7 @@
 import { Row, Col } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-import { sister, empty, pp1, move, camera, music } from "../../../assets/pic/home/index";
+import { sister, empty, pp, move, camera, music } from "../../../assets/pic/home/index";
 import "./index.less";
 
 const AnnualSummary = () => {
@@ -74,7 +74,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={pp1} alt="胖胖" />
+                <img src={pp} alt="胖胖" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
