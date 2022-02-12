@@ -1,0 +1,86 @@
+.three {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  background-color: #000;
+  color: #fff;
+
+  &-title {
+    width: 20%;
+    display: flex;
+    font-size: 60px;
+    font-family: 'DS-Digital-Bold';
+    flex-direction: column;
+    margin: 0 20px;
+
+    &-back {
+      font-size: 20px;
+      margin-top: 20px;
+
+      span {
+        cursor: pointer;
+        margin-right: 10px;
+      }
+
+      span:hover {
+        text-decoration: underline;
+      }
+    }
+
+    &-info {
+      font-size: 16px;
+      font-family: SimHei;
+
+      div {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &-list {
+    width: 80%;
+    display: flex;
+    background-color: #000;
+    padding-left: 20px;
+
+    &-content {
+      width: 100%;
+      margin-right: 20px;
+      flex-wrap: wrap;
+      display: flex;
+      align-content: flex-start;
+
+      &-item {
+        font-family: SimHei;
+        width: 23%;
+        min-width: 200px;
+        background-color: #adb4b9;
+        border-radius: 8px;
+        margin: 20px 20px 0 0;
+        padding-bottom: 10px;
+        border: 2px solid #adb4b9;
+
+        span:hover {
+          color: #6300cf;
+        }
+
+        img {
+          width: 100%;
+          border-radius: 8px 8px 0 0;
+        }
+
+        &-title {
+          text-align: center;
+          color: #1E2022;
+          font-size: 18px;
+          margin-top: 10px;
+        }
+      }
+
+      &-item:hover {
+        background-color: #fff;
+        border: 2px solid #fff;
+      }
+    }
+  }
+}
