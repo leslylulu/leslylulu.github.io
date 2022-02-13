@@ -5,7 +5,7 @@ const ArticleList = () => {
 
   const list2021 = [
     { id: 1, name: '2021年度总结', url: '/home/anan' },
-    { id: 2, name: 'test', url: '/home/test' },
+    // { id: 2, name: 'test', url: '/home/test' },
   ];
 
   const list2022 = [

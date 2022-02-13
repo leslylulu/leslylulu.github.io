@@ -1,13 +1,9 @@
 import { Row, Col } from "antd";
 import { LeftCircleOutlined } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom";
-<<<<<<< HEAD
-import { sister, empty, pp, move, camera, music } from "../../../assets/pic/home/index";
-=======
 // import { sister, empty, pp1, move, camera, music } from "../../../assets/pic/home/index";
-import { sister, empty } from "../../../assets/pic/home/index";
+import { sister, empty, pp, move, camera, music } from "../../../assets/pic/home/index";
 
->>>>>>> d36892fba57b9dd27e76466f7120bced6822107f
 import "./index.less";
 
 const AnnualSummary = () => {
@@ -73,11 +69,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-<<<<<<< HEAD
                 <img src={pp} alt="胖胖" />
-=======
-                <img src={empty} alt="胖胖" />
->>>>>>> d36892fba57b9dd27e76466f7120bced6822107f
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -99,7 +91,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={empty} alt="搬家" />
+                <img src={move} alt="搬家" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -171,7 +163,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={empty} alt="camera" />
+                <img src={camera} alt="camera" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>
@@ -188,7 +180,7 @@ const AnnualSummary = () => {
           <Row gutter={10} style={{ paddingTop: 20 }}>
             <Col span={8}>
               <div className="summary-pic">
-                <img src={empty} alt="music" />
+                <img src={music} alt="music" />
               </div>
             </Col>
             <Col span={10} style={{ display: "flex", flexDirection: "column" }}>

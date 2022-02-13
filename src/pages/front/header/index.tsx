@@ -4,7 +4,7 @@ import './index.less';
 
 const Header = () => {
 
-  const [current, setCurrent] = useState('');
+  const [current, setCurrent] = useState('js');
 
   const handleClick = (e: any) => {
     setCurrent(e.key);
