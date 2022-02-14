@@ -13,9 +13,9 @@ const Index = () => {
           <div className='index-body-card'>
             <Link to="/home">Personalized Homepage </Link>
           </div>
-          <div className='index-body-card'>
+          {/* <div className='index-body-card'>
             <Link to="/front">Front-end</Link>
-          </div>
+          </div> */}
         </div>
         <div className='index-row'>
           <div className='index-body-card'>

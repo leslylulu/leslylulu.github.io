@@ -225,9 +225,7 @@ const Geometry = () => {
 
   return (
     <div>
-      <div>
-        <canvas id="geometry" width="1800" height="700"></canvas>
-      </div>
+      <canvas id="geometry" width="1800" height="700"/>
     </div>
   );
 

@@ -1,7 +1,11 @@
+import Interview from './interview/index';
+
 const Me = () => {
 
   return (
-    <div>Me</div>
+    <div>
+      <Interview/>
+    </div>
   );
 }
 
