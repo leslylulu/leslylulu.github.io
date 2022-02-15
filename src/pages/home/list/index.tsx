@@ -9,7 +9,7 @@ const ArticleList = () => {
   ];
 
   const list2022 = [
-    { id: 1, name: '2022-01', url: '/home/anan' },
+    { id: 1, name: '周记', url: '/home/weekly' },
   ]
 
   return (

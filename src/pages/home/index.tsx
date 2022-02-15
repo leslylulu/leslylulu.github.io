@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import MenuList from './list/index';
 import AnnualSummary from './annualsummary/index';
 import Test from './test/index';
+import Weekly from './weekly/index';
 import './index.less';
 
 const Home = () => {
@@ -12,6 +13,7 @@ const Home = () => {
         <Route path="/" element={<MenuList />} />
         <Route path="/anan" element={<AnnualSummary />} />
         <Route path="/test" element={<Test />} />
+        <Route path="/weekly" element={<Weekly />} />
       </Routes>
     </div>
   );
