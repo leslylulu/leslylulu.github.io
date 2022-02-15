@@ -3,6 +3,8 @@ import ThreeList from './list/index';
 import LineDemo from './line/index';
 import ThreeScene from './demo/index';
 import Geometry from './geometry/index';
+import Model from './model/index';
+
 import './index.less';
 
 const ThreeDemo = () => {
@@ -14,6 +16,8 @@ const ThreeDemo = () => {
         <Route path="/demo" element={<ThreeScene />} />
         <Route path="/line" element={<LineDemo />} />
         <Route path="/geometry" element={<Geometry />} />
+        <Route path="/model" element={<Model />} />
+
       </Routes>
     </div>
   );

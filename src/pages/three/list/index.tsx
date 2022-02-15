@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { LeftCircleOutlined } from "@ant-design/icons";
-import { box, demo } from '../../../assets/pic/three/index';
+import { box, demo, qiang } from '../../../assets/pic/three/index';
 import './index.less';
 
 const ThreeList = () => {
@@ -8,7 +8,7 @@ const ThreeList = () => {
   const listdemo = [
     { id: 1, name: '场景', url: '/three/demo', gif: box },
     { id: 2, name: '图元', url: '/three/geometry', gif: demo },
-    // { id: 3, name: 'demo api', url: '/three/api', gif: box },
+    { id: 3, name: '模型', url: '/three/models', gif: qiang },
     // { id: 4, name: '线', url: '/three/line', gif: demo },
   ];
 
