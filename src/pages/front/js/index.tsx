@@ -158,6 +158,64 @@ const titleList = [
     node: <div>
       <p>为了不添加多余的DOM节点，我们可以使用Fragment标签来包裹所有的元素，Fragment标签不会渲染出任何元素</p>
     </div>
+  },
+  {
+    name: '什么是TypeScript？',
+    type: 'ts',
+    node: <div>
+      <p>Typescript 是一个强类型的 JavaScript 超集，支持ES6语法，</p>
+      <p>支持面向对象编程的概念，如类、接口、继承、泛型等。</p>
+      <p>Typescript并不直接在浏览器上运行，需要编译器编译成纯Javascript来运行。</p>
+    </div>
+  },
+  {
+    name: 'TypeScript 相对于 JavaScript 的优势是什么?',
+    type: 'ts',
+    node: <div>
+      <p>类型检查在编写代码时检测错误，使得代码质量更好，更健壮</p>
+      <p>类型可以一定程度上充当注释、文档</p>
+    </div>
+  },
+  {
+    name: 'TypeScript 中 const 和 readonly 的区别？',
+    type: 'ts',
+    node: <div>nope</div>
+  },
+  {
+    name: '枚举和常量枚举的区别？',
+    type: 'ts',
+    node: <div>
+      <p>为了避免在额外生成的代码上的开销和额外的非直接的对枚举成员的访问，我们可以使用 const枚举</p>
+    </div>
+  },
+  {
+    name: 'src和href的区别？',
+    type: 'html',
+    node: <div>
+      <p>src: 对资源的引用，它指向的内容会嵌入到当前标签所在的位置、将其指向的资源下载并应⽤到⽂档内，如请求js脚本</p>
+      <p>href: 超文本引用，它指向一些网络资源，建立和当前元素或本文档的链接关系</p>
+    </div>
+  },
+  {
+    name: 'HTML语义化？',
+    type: 'html',
+    node: <div>
+      <p>对机器友好,适合SEO</p>
+      <p>对开发者友好，使用语义类标签增强了可读性</p>
+      <p>header、nav、section、main、article、aside、footer</p>
+    </div>
+  },
+  {
+    name: 'DOCTYPE(⽂档类型) 的作⽤？',
+    type: 'html',
+    node: <div></div>
+  },
+  {
+    name: ' script标签中defer和async的区别？',
+    type: 'html',
+    node: <div>
+      <p>script标签中defer和async的区别？</p>
+    </div>
   }
 ];
 

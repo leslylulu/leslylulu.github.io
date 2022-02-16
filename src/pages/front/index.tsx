@@ -1,11 +1,11 @@
-import Header from './header/index';
+// import Header from './header/index';
 import JSCatalog from './js/index';
 
 const Front = () => {
 
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <JSCatalog/>
     </div>
   );

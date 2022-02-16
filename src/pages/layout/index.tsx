@@ -21,9 +21,9 @@ const Index = () => {
           <div className='index-body-card'>
             <Link to="/three">Three JS demo</Link>
           </div>
-          <div className='index-body-card'>
+          {/* <div className='index-body-card'>
             <Link to="/me">Contact me</Link>
-          </div>
+          </div> */}
         </div>
       </div>
       <Outlet />
