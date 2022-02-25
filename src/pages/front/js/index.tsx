@@ -237,10 +237,10 @@ const browserList = [
 const JSCatalog = () => {
 
   return (
-    <div>
+    <div className='js'>
       <Row>
         <Col span={12}>
-          {/* <div className='js-title'>必考：</div> */}
+          <div className='js-title'>必考：</div>
           <Collapse className='react-card' defaultActiveKey={[`${titleList.length}`]}>
             {
               titleList.map((item, index) => {
@@ -268,7 +268,7 @@ const JSCatalog = () => {
             }
           </Collapse>
         </Col>
-        <Col span={12} style={{ display: 'none' }}>
+        <Col span={12} >
           <div className='js-title'>难点：</div>
           <Collapse className='react-card' defaultActiveKey={[`${titleList.length}`]}>
             {

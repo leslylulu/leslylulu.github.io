@@ -13,17 +13,12 @@ const Index = () => {
           <div className='index-body-card'>
             <Link to="/home">Personalized Homepage </Link>
           </div>
-          {/* <div className='index-body-card'>
+          <div className='index-body-card'>
             <Link to="/front">Front-end</Link>
-          </div> */}
-        </div>
-        <div className='index-row'>
+          </div>
           <div className='index-body-card'>
             <Link to="/three">Three JS demo</Link>
           </div>
-          {/* <div className='index-body-card'>
-            <Link to="/me">Contact me</Link>
-          </div> */}
         </div>
       </div>
       <Outlet />

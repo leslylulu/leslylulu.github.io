@@ -1,0 +1,34 @@
+@color-p: #71C9CE;
+@color-s: #A6E3E9;
+@color-l: #CBF1F5;
+@color-w: #E3FDFD;
+
+.front{
+  background-color: @color-w;
+  color: @color-p;
+  height: 100vh;
+  overflow: hidden;
+  &-menu{
+    height: 75px;
+    background-color: @color-p;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    &-item{
+      color: @color-w;
+      padding: 0 8px;
+      font-size: 22px;
+      margin: 0 4px;
+      &-selected{
+        background-color: #5fabaf;
+        border-radius: 4px;
+      }
+      &:hover{
+        cursor: pointer;
+        background-color: #5fabaf;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+

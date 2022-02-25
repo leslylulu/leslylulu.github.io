@@ -1,0 +1,31 @@
+@color-p: #71C9CE;
+@color-s: #A6E3E9;
+@color-l: #CBF1F5;
+@color-w: #E3FDFD;
+
+.demo{
+  display: flex;
+  height: calc(100vh - 75px);
+  &-left{
+    width: 20%;
+    margin: 20px;
+    font-size: 16px;
+    .title-item{
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 4px;
+      &-selected{
+        color: #042c2e;
+        font-weight: 600;
+      }
+      &:hover{
+        background-color: #fff;
+      }
+    }
+  }
+  &-right{
+    background-color:#fff;
+    flex: 1;
+    padding: 20px;
+  }
+}
