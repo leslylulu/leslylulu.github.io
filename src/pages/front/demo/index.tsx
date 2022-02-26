@@ -8,7 +8,7 @@ import { Routes, Route } from "react-router-dom";
 
 const Demo = () => {
   const leftTitle = [
-    { name: 'useMemo', key: 'useMemo' },
+    { name: 'memo', key: 'memo' },
     { name: 'useCallBack', key: 'useCallBack' },
   ]
 
@@ -35,7 +35,7 @@ const Demo = () => {
       </div>
       <div className="demo-right">
         <Routes>
-          <Route path="/usememo" element={<UseMemoHook />} />
+          <Route path="/memo" element={<UseMemoHook />} />
         </Routes>
       </div>
     </div>
