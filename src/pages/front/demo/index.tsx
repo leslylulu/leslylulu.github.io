@@ -1,5 +1,8 @@
 import { useState } from 'react';
-import UseMemoHook from './usememo/index';
+import MemoDemo from './memo/index';
+import UseMemoDemo from './useMemoDemo/index';
+import UseCallBackDemo from './useCallBackDemo/index';
+import UseRefDemo from './useRefDemo/index';
 import { Link } from "react-router-dom";
 
 import './index.less';
@@ -9,7 +12,9 @@ import { Routes, Route } from "react-router-dom";
 const Demo = () => {
   const leftTitle = [
     { name: 'memo', key: 'memo' },
+    { name: 'useMemo', key: 'useMemo' },
     { name: 'useCallBack', key: 'useCallBack' },
+    { name: 'useRef', key: 'useRef' },
   ]
 
   const [current, setCurrent] = useState(leftTitle[0].key);
@@ -35,7 +40,10 @@ const Demo = () => {
       </div>
       <div className="demo-right">
         <Routes>
-          <Route path="/memo" element={<UseMemoHook />} />
+          <Route path="/memo" element={<MemoDemo />} />
+          <Route path="/useMemo" element={<UseMemoDemo />} />
+          <Route path="/useCallBack" element={<UseCallBackDemo />} />
+          <Route path="/useRef" element={<UseRefDemo />} />
         </Routes>
       </div>
     </div>

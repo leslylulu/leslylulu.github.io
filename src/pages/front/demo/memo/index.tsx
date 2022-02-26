@@ -9,8 +9,8 @@ const Son = (props: any) => {
   return (
     <div className="son" >
       <div>this is son Node：</div>
-      <div >props numA = {numA}</div>
-      {/* <div onClick={noUseClick} >props numA = {numA}</div> */}
+      {/* <div >props numA = {numA}</div> */}
+      <div onClick={noUseClick} >props numA = {numA}</div>
     </div>
   ) 
 };
@@ -38,13 +38,13 @@ const Parent = () => {
       {/* <Son noUseClick={noUseClick} numB={numB} numA={numA} text={'没有 noUseClick 没有memo 没有numB 包裹的组件被渲染了'} /> */}
       <WarpperSon numB={numB} numA={numA} text={'有 numB 包裹的组件被渲染了, 就算Son组件没有使用numB这个变量，但是numB发生变化了还是引起重新渲染'} />
       <WarpperSon numA={numA} text={'没有 numB 包裹的组件被渲染了'} />
-      {/* <WarpperSon noUseClick={noUseClick} numA={numA} text={'WarpperSon noUseClick numA 包裹的组件被渲染了，无论函数是否变化，都会重新渲染'} /> */}
+      <WarpperSon noUseClick={noUseClick} numA={numA} text={'WarpperSon noUseClick numA 包裹的组件被渲染了，无论函数是否变化，都会重新渲染'} />
       {/* <WarpperSon numA={numA} text={'WarpperSon numA 包裹的组件被渲染了'} /> */}
     </div>
   )
 }
 
-const UseMemoHook = () => {
+const MemoDemo = () => {
   return (
     <div className="memo">
       <div>React.memo是高阶组件</div>
@@ -56,4 +56,4 @@ const UseMemoHook = () => {
   )
 }
 
-export default UseMemoHook;
+export default MemoDemo;
