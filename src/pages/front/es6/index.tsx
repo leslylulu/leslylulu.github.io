@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import FlexDemo from './flex/index';
-import Flex1Demo from './flex1/index'
+// import FlexDemo from './flex/index';
+import PromiseDemo from './promise/index';
 
 import { Routes, Link, Route } from "react-router-dom";
 
@@ -9,11 +9,9 @@ import { Routes, Link, Route } from "react-router-dom";
 import './index.less';
 
 
-const CSSDemo = () => {
+const ES6Demo = () => {
   const leftTitle = [
-    { name: 'flex', key: 'flex' },
-    { name: 'flex = 1', key: 'flex1' },
-
+    { name: 'promise', key: 'promise' },
   ]
 
   const [current, setCurrent] = useState(leftTitle[0].key);
@@ -39,8 +37,7 @@ const CSSDemo = () => {
       </div>
       <div className="demo-right">
         <Routes>
-          <Route path="/flex" element={<FlexDemo />} />
-          <Route path="/flex1" element={<Flex1Demo />} />
+          <Route path="/promise" element={<PromiseDemo />} />
         </Routes>
       </div>
     </div>
@@ -48,4 +45,4 @@ const CSSDemo = () => {
 
 }
 
-export default CSSDemo;
+export default ES6Demo;
