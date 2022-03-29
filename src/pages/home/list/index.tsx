@@ -18,7 +18,7 @@ const ArticleList = () => {
         <span>📷</span>
         <span style={{ marginLeft: 20 }}>2022</span>
       </div>
-      <div className="home-list" style={{ display: 'none'}}>
+      <div className="home-list" >
         {
           list2022.map((item, index) => {
             return (
