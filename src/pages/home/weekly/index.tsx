@@ -1,20 +1,10 @@
 import { Tabs } from 'antd';
-import { useNavigate } from "react-router-dom";
-import { LeftCircleOutlined } from "@ant-design/icons";
+import Navigator from '../../../comp/navigator/index';
 import './index.less';
 
 const { TabPane } = Tabs;
 
 const Weekly = () => {
-  let navigate = useNavigate();
-
-  const backToPrevious = () => {
-    navigate("/home");
-  };
-
-  const backToIndex = () => {
-    navigate("/");
-  };
 
   const menuList = [
     {
@@ -83,22 +73,23 @@ const Weekly = () => {
         <strong className='title' >搬家</strong>
         <p>搬完家之后，需要买的东西越来越多，哪里都是要花的钱，都是该花的</p>
         <p>昨天建军吐了，吃的太快了，这次搬家感觉孩子们适应的还行，还是有待观察</p>
-        
+
       </div>
     }
   ]
 
   return (
     <div className='week'>
-      <div className="previous" onClick={backToPrevious}>
+      <Navigator previousUrl="/home" />
+      {/* <div className="previous" onClick={backToPrevious}>
         <LeftCircleOutlined />
         <span>上一页</span>
       </div>
       <div className="previous" onClick={backToIndex}>
         <LeftCircleOutlined />
         <span>回到首页</span>
-      </div>
-      <Tabs tabPosition='left' defaultActiveKey={`${menuList.length-1}`} >
+      </div> */}
+      <Tabs tabPosition='left' defaultActiveKey={`${menuList.length - 1}`} >
         {menuList.map((item, index) => (
           <TabPane tab={item.title} key={index} >
             {
