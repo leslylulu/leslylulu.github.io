@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Navigator from '../../../comp/navigator/index';
 import './index.less';
 
 const ArticleList = () => {
@@ -13,7 +14,8 @@ const ArticleList = () => {
   ]
 
   return (
-    <div style={{ height: '100vh' }}>
+    <div className="home-box" style={{ height: '100vh' }}>
+      <Navigator previousUrl="/" />
       <div className="home-title">
         <span>📷</span>
         <span style={{ marginLeft: 20 }}>2022</span>

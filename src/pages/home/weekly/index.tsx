@@ -1,10 +1,20 @@
 import { Tabs } from 'antd';
+import { useEffect, useState } from 'react';
 import Navigator from '../../../comp/navigator/index';
+import { isMobile } from '../../../util/index';
 import './index.less';
 
 const { TabPane } = Tabs;
 
 const Weekly = () => {
+  const [mode, setMode] = useState<'left' | 'right' | 'top' | 'bottom'>('left');
+
+  useEffect(() => {
+    if (isMobile()) {
+      setMode('top')
+    }
+    console.log('isMobile === ', isMobile());
+  }, []);
 
   const menuList = [
     {
@@ -81,15 +91,7 @@ const Weekly = () => {
   return (
     <div className='week'>
       <Navigator previousUrl="/home" />
-      {/* <div className="previous" onClick={backToPrevious}>
-        <LeftCircleOutlined />
-        <span>上一页</span>
-      </div>
-      <div className="previous" onClick={backToIndex}>
-        <LeftCircleOutlined />
-        <span>回到首页</span>
-      </div> */}
-      <Tabs tabPosition='left' defaultActiveKey={`${menuList.length - 1}`} >
+      <Tabs tabPosition={mode} className='title-tab' defaultActiveKey={`${menuList.length - 1}`} >
         {menuList.map((item, index) => (
           <TabPane tab={item.title} key={index} >
             {
