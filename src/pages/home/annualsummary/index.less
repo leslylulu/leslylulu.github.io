@@ -1,58 +1,75 @@
-.previous {
-  color: #a57e7e;
-  padding: 20px;
-  cursor: pointer;
-  font-size: 22px;
-  margin-bottom: 10px;
-  display: inline-block;
-  .anticon {
-    margin-right: 10px;
-  }
+.annu-page {
+  display: flex;
+  flex-direction: column;
 }
 
-.previous:hover {
-  text-decoration: underline;
-}
-
-.summary {
-  background: rgba(246, 246, 246, 0.45);
-  margin: 0 20px;
-  padding: 20px;
-  border-radius: 8px;
-  color: #8785A2;
-
-  &-title {
+.btn-group {
+  max-width: 1100px;
+  justify-content: center;
+  display: flex;
+  .previous {
+    color: #a57e7e;
+    padding: 20px;
+    cursor: pointer;
+    font-size: 22px;
     margin-bottom: 10px;
-    font-size: 24px;
+    display: inline-block;
 
-    &-text {
-      font-size: 30px;
-      font-weight: bold;
+    .anticon {
+      margin-right: 10px;
     }
   }
 
-  &-article {
-    font-family: serif;
-    font-size: 16px;
-    color: #53526b;
-    line-height: 30px;
+  .previous:hover {
+    text-decoration: underline;
   }
+}
 
-  &-logo {
-    font-family: 'DS-Digital-Bold';
-    font-size: 200px;
-    text-align: center;
-  }
+.sum {
+  display: flex;
+  justify-content: center;
 
-  &-pic {
-    width: 100%;
+  .summary {
+    background: rgba(246, 246, 246, 0.45);
+    padding: 20px;
+    border-radius: 8px;
+    color: #8785A2;
+    max-width: 1100px;
 
-    img {
-      width: auto;
-      border-radius: 8px;
-      height: auto;
-      max-width: 100%;
-      max-height: 100%;
+    &-title {
+      margin-bottom: 10px;
+      font-size: 24px;
+
+      &-text {
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+
+    &-article {
+      font-family: serif;
+      font-size: 16px;
+      color: #53526b;
+      line-height: 30px;
+    }
+
+    &-logo {
+      font-family: 'DS-Digital-Bold';
+      font-size: 200px;
+      text-align: center;
+      line-height: 200px;
+    }
+
+    &-pic {
+      width: 100%;
+
+      img {
+        width: auto;
+        border-radius: 8px;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
     }
   }
 }
