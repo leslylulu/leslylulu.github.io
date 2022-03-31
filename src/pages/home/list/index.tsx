@@ -6,11 +6,11 @@ const ArticleList = () => {
 
   const list2021 = [
     { id: 1, name: '2021年度总结', url: '/home/anan' },
-    // { id: 2, name: 'test', url: '/home/test' },
   ];
 
   const list2022 = [
     { id: 1, name: '周记', url: '/home/weekly' },
+    { id: 2, name: '🏃‍♀️如何过好这一生', url: '/home/wholelife' },
   ]
 
   return (
