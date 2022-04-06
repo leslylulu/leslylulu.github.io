@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Navigator from '../../comp/navigator/index';
 import JSCatalog from "./js/index";
 import Demo from "./demo/index";
 import CSSDemo from "./css/index";
@@ -10,7 +11,7 @@ import "./index.less";
 
 const Front = () => {
   const menuArray = [
-    // { name: 'js', key: 'js' },
+    { name: 'js', key: 'js' },
     { name: "demo", key: "demo" },
     { name: "css", key: "css" },
     { name: "es6", key: "es6" },
@@ -24,6 +25,7 @@ const Front = () => {
 
   return (
     <div className="front">
+      <Navigator justifyContent="center" previousUrl='/home' />
       <div className="front-menu">
         {menuArray.map((item, index) => {
           const selected = current === item.key;

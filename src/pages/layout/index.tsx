@@ -14,7 +14,7 @@ const Index = () => {
             <Link to="/home">Personalized Homepage </Link>
           </div>
           <div className='index-body-card'>
-            <Link to="/front">Front-end</Link>
+            <Link to="/front/js">Front-end</Link>
           </div>
           <div className='index-body-card'>
             <Link to="/three">Three JS demo</Link>
