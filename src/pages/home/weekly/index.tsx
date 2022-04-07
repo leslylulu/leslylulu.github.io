@@ -86,7 +86,7 @@ const Weekly = () => {
       </div>
     },
     {
-      title: '03/28 - 04/06',
+      title: '03/28 - 04/05',
       node: <div className='node'>
         <p>这一周整个就是浑浑噩噩，严重浮躁 + 中度焦虑</p>
         <p>我不是找到工作了吗，把之前计划准备做的事情都实施起来呀？为什么我不去做？因为我实在不知道干什么了，积累了太多的事情</p>
@@ -106,6 +106,16 @@ const Weekly = () => {
 
         <strong className='title' >交接</strong>
         <p>早点交接就早点离职，我也不着急入职或者晚点离职了，就歇歇吧</p>
+
+        <strong className='title' >日积月累</strong>
+        <p>https://segmentfault.com/a/1190000023716452</p>
+      </div>
+    },
+    {
+      title: '04/06 - 04/08',
+      node: <div className='node'>
+        <strong className='title' >日积月累</strong>
+        <p>https://segmentfault.com/a/1190000023716452</p>
       </div>
     }
   ]
