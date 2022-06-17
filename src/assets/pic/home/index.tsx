@@ -4,6 +4,7 @@ import pp from './pp.jpg';
 import move from './move.jpeg';
 import camera from './camera.jpg';
 import music from './music.jpg';
+import computer from './computer.jpg';
 
 export { 
   sister,
@@ -12,4 +13,5 @@ export {
   move,
   camera,
   music,
+  computer,
 };

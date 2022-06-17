@@ -2,6 +2,7 @@ import { Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import Navigator from '../../../comp/navigator/index';
 import { isMobile } from '../../../util/index';
+import { computer } from '../../../assets/pic/home'
 import './index.less';
 
 const { TabPane } = Tabs;
@@ -114,10 +115,52 @@ const Weekly = () => {
     {
       title: '04/06 - 04/08',
       node: <div className='node'>
-        <strong className='title' >日积月累</strong>
-        <p>https://segmentfault.com/a/1190000023716452</p>
+        <div>
+          <strong className='title' >日积月累</strong>
+        </div>
+        <div>
+          这是一个nvm配置的链接，踩坑结束
+          <a href='https://segmentfault.com/a/1190000023716452' target='_blank'>链接</a>
+        </div>
       </div>
-    }
+    },
+    {
+      title: '...',
+      node: <div className='node'>
+        没有意外的，我又鸽鸽鸽鸽鸽鸽鸽鸽鸽鸽鸽鸽了，但是没有杭州三号线鸽王厉害，我只是两个月而已
+      </div>
+    },
+    {
+      title: '04/08 - 06/17',
+      node: <div className='node'>
+        <div>已经很久没有更新了, 今天我来更新的我的烂摊子了🙃</div>
+        <strong className='title' >新环境</strong>
+        <p>
+          <ul>
+            <li>入职之后，我感到非常的局促，尽管我有三年的工作经验，我也束手束脚的，因为我不知道大家都是什么水平，生怕一张嘴就会显得我很笨</li>
+            <li>我是我们组第一个女孩子，我不知道和他们聊什么，虽然并不是聊一些和性别关系很紧密的话题，可是我觉得我说的，他们会很难认同我，然后就冷场尬住，还不如不说话</li>
+            <li>发的笔记本是新的，显示器我就不多说了，哒咩🙅‍♀️， 我不满意</li>
+            <div>
+              <img className='pic' src={computer} alt="computer" />
+            </div>
+            <li>工位是满意的，有了小柜子，头顶的空调也是想开就开</li>
+            <li>我一直以为我是老白菜，遇到一群新的同事之后，我发现是老不那么菜😶‍🌫️</li>
+            <li>说实话，技术能力是有一点点提升的，同时对自己也开始越来越自信，一点点吧，完全是来源于工作的那种</li>
+            <li>但是我对我的技术成长还是有点担忧，因为这边的前端是完全的依赖于框架，框架是别人开发的，之所以项目可以跑是前人栽树，后人乘凉罢了</li>
+          </ul>
+        </p>
+        <strong className='title' >新小区</strong>
+        <p>
+          <ul>
+            <li>搬家之后，通勤时间变长，1小时45分钟 --- 1小时10分钟 --- 50分钟,时间逐渐变少，但是这个时间也没有很近</li>
+            <li>我们租了两室一厅，我觉得完全没有必要了，一室一厅 加一个很大仓库就行，另外一个卧室完全没人住，只是为了储物</li>
+            <li>搬家真是一个月新鲜感，钱包空了就不想打扫了，而且我和我对象两个人对于家居的收纳打理完全是两个不一样的观念</li>
+            <li>我很气的点就是：女孩谁不想自己的卧室干干净净，温馨，香香的，但是我对象完全没有概念，他觉得有当然好，没有也无所谓，他这个无所谓就会觉得凭什么让他住进来🤷‍♀️</li>
+            <br/>
+          </ul>
+        </p>
+      </div>
+    },
   ]
 
   return (
