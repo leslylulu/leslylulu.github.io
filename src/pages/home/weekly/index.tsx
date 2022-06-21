@@ -163,6 +163,7 @@ const Weekly = () => {
         <p>
           <ul>
             <li>其实最重要的是生活，我以前觉得自己会把工作放在第一位的人都是特别的爱岗敬业，无私奉献，但是现在看来就是额。。。</li>
+            <li>https://www.cnblogs.com/xiaoxi-jinchen/p/15440255.html</li>
             <br/>
           </ul>
         </p>
