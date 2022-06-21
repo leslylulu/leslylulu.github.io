@@ -159,6 +159,13 @@ const Weekly = () => {
             <br/>
           </ul>
         </p>
+        <strong className='title' >新心态</strong>
+        <p>
+          <ul>
+            <li>其实最重要的是生活，我以前觉得自己会把工作放在第一位的人都是特别的爱岗敬业，无私奉献，但是现在看来就是额。。。</li>
+            <br/>
+          </ul>
+        </p>
       </div>
     },
   ]
